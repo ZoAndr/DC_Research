@@ -1,5 +1,5 @@
 import connect
-import parameters
+#import parameters
 import sys
 from PyQt5.QtWidgets import QApplication, QMainWindow, QLabel, QComboBox, QPushButton, QCheckBox, QLineEdit
 
@@ -460,10 +460,10 @@ class Example(QWidget):
         received = ''
         while(k < N):
             if((self.rx_buf[k] == 255) & (N - k >= 16)):
-                self.U_inp = int(self.rx_buf[k + 1])  * self.U_unit_1st_bit + int(self.rx_buf[k + 2]) * self.U_unit_2nd_bit
-                self.I_inp = int(self.rx_buf[k + 3])  * self.I_unit_1st_bit + int(self.rx_buf[k + 4]) * self.I_unit_2nd_bit
-                self.U_out = int(self.rx_buf[k + 5])  * self.U_unit_1st_bit + int(self.rx_buf[k + 6]) * self.U_unit_2nd_bit
-                self.I_out = int(self.rx_buf[k + 7])  * self.I_unit_1st_bit + int(self.rx_buf[k + 8]) * self.I_unit_2nd_bit
+                self.I_inp = int(self.rx_buf[k + 1])  * self.I_unit_1st_bit + int(self.rx_buf[k + 2]) * self.I_unit_2nd_bit
+                self.U_inp = int(self.rx_buf[k + 3])  * self.U_unit_1st_bit + int(self.rx_buf[k + 4]) * self.U_unit_2nd_bit
+                self.I_out = int(self.rx_buf[k + 5])  * self.I_unit_1st_bit + int(self.rx_buf[k + 6]) * self.I_unit_2nd_bit
+                self.U_out = int(self.rx_buf[k + 7])  * self.U_unit_1st_bit + int(self.rx_buf[k + 8]) * self.U_unit_2nd_bit
                 self.t_1   = int(self.rx_buf[k + 9])  * self.t_unit_1st_bit + int(self.rx_buf[k + 10]) * self.t_unit_2nd_bit
                 self.t_2   = int(self.rx_buf[k + 11]) * self.t_unit_1st_bit + int(self.rx_buf[k + 12]) * self.t_unit_2nd_bit
                 self.t_3   = int(self.rx_buf[k + 13]) * self.t_unit_1st_bit + int(self.rx_buf[k + 14]) * self.t_unit_2nd_bit
